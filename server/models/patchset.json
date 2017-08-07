@@ -1,0 +1,44 @@
+{
+  "name": "patchset",
+  "description": "Group of patches which fix a vulnerability.",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "origin": {
+      "type": "string",
+      "required": true,
+      "description": "From where the patches where downloaded, ie: 'notes', 'wheezy'"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "patches": {
+      "type": "hasMany",
+      "model": "patch",
+      "foreignKey": ""
+    },
+    "hunks": {
+      "type": "hasMany",
+      "model": "hunk",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

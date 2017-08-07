@@ -1,0 +1,172 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false,
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "user",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "strictObjectIDCoercion": true
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "patch": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "provider": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "cve": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "findById": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "hunk": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "findById": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "create": true,
+          "login": true,
+          "logout": true
+        }
+      }
+    }
+  },
+  "patchset": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "findById": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "setup": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "create": true,
+          "deleteById": true,
+          "patchAttributes": true,
+          "find": true,
+          "findById": true,
+          "count": true,
+          "findSetup": true,
+          "findHeuristic": true
+        }
+      }
+    }
+  },
+  "build": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "findById": true,
+          "patchAttributes": true,
+          "create": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "result": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "deleteById": true,
+          "findById": true,
+          "create": true,
+          "count": true
+        }
+      }
+    }
+  }
+}

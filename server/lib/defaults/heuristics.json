@@ -1,0 +1,7 @@
+[
+  { "name": "Classical", "description": "TODO" },
+  { "name": "Fuzz", "description": "TODO" },
+  { "name": "IgnoreFilename", "description": "TODO" },
+  { "name": "Offset", "description": "TODO" },
+  { "name": "FuzzIgnoreFilename", "description": "TODO" }
+]

@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb-base",
+
+  "rules": {
+    "max-len": ["warn", 100, 4],
+    "strict": ["off"]
+  },
+
+  "plugins": ["json"]
+}

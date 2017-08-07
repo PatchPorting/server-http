@@ -1,0 +1,12 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": [
+      "public/explorer"
+    ],
+    "apiInfo": {
+      "title": "Patch porting HTTP API",
+      "description": "This document specifies the HTTP API microservice of the Patch porting project."
+    }
+  }
+}

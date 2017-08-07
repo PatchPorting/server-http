@@ -1,0 +1,74 @@
+[
+  {
+    "heuristic": "Classical"
+  },
+  {
+    "heuristic": "Offset"
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 1
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromBottom": 1
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 2
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromBottom": 2
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 3
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromBottom": 3
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 1,
+      "fromBottom": 1
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 2,
+      "fromBottom": 2
+    }
+  },
+  {
+    "heuristic": "Fuzz",
+    "options": {
+      "fromTop": 3,
+      "fromBottom": 3
+    }
+  },
+  {
+    "heuristic": "IgnoreFilename"
+  },
+  {
+    "heuristic": "FuzzIgnoreFilename",
+    "options": {
+      "fromTop": 1
+    }
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "name": "build",
+  "description": "Try of applying some hunks using some heuristics to a package. A POST here starts a background job.",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "validate": false,
+  "properties": {
+    "pkgName": {
+      "type": "string",
+      "description": "Name of the package"
+    },
+    "pkgVersion": {
+      "type": "string",
+      "description": "Version of the package"
+    },
+    "mode": {
+      "type": "string",
+      "required": true,
+      "description": "To know if it was asked for the user or automatically (manual/default)",
+      "default": "default"
+    },
+    "status": {
+      "type": "string",
+      "description": "This job is queued so we need this to know if it has finished and the result (waiting/pending/failed/patched)",
+      "default": "waiting"
+    },
+    "dist": {
+      "type": "string",
+      "description": "Distribution version to build into",
+      "default": "jessie"
+    },
+    "hunks": {
+      "type": [
+        "object"
+      ],
+      "description": "Hunks to apply with an optional specific setup, ie: { 'id': '111', 'setupId': '111' }. If 'setup' is not passed the default one is used (see '/setup/default')"
+    },
+    "cveIds": {
+      "type": ["string"],
+      "description": "DB identifiers of the CVE entry where it was discovered"
+    },
+    "created": {
+      "type": "date",
+      "description": "To get ordered results",
+      "defaultFn": "now"
+    },
+    "started": {
+      "type": "date",
+      "description": "To be filled by the worker"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "results": {
+      "type": "hasMany",
+      "model": "result",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

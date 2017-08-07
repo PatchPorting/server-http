@@ -1,0 +1,48 @@
+{
+  "name": "provider",
+  "description": "Supported sites from which we look for patch candidates.",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Unique name for the site in our system"
+    },
+    "description": {
+      "type": "string",
+      "description": "Some words about the provider"
+    },
+    "file": {
+      "type": "string",
+      "description": "File name where it's implemented"
+    }
+  },
+  "hidden": ["file"],
+  "validations": [],
+  "relations": {
+    "patchsets": {
+      "type": "hasMany",
+      "model": "patchset",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,49 @@
+{
+  "name": "setup",
+  "description": "Combination of heuristics and its options to use with a 'hunk' in 'builds'.",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Custom name to identify this combination"
+    },
+    "content": {
+      "type": [
+        "object"
+      ],
+      "required": true,
+      "description": "List of combinations: heuristic / options",
+      "default": [
+        {
+          "heuristic": "Fuzz",
+          "options": {
+            "fromTop": 3,
+            "fromBottom": 3
+          }
+        }
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

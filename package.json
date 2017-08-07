@@ -1,0 +1,49 @@
+{
+  "name": "server-http",
+  "version": "0.1.13",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node .",
+    "debug": "DEBUG=server* npm start",
+    "test": "NODE_ENV=test tap test",
+    "lint": "eslint server test",
+    "dep-ok": "depcheck --ignores=compression,cors,loopback-component-explorer,loopback-component-storage,loopback-connector-mongodb,loopback-datasource-juggler,serve-favicon,strong-error-handler,body-parser,helmet",
+    "dep-sec": "nsp check",
+    "dep-old": "ncu",
+    "posttest": "npm run lint && npm run dep-ok && npm run dep-sec"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cfenv": "^1.0.3",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "debug": "^2.6.6",
+    "helmet": "^1.3.0",
+    "lodash": "^4.17.4",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-common-errors": "0.0.4",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-mongodb": "^3.1.0",
+    "require-directory": "^2.1.1",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "depcheck": "^0.6.4",
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-json": "^1.2.0",
+    "npm-check-updates": "^2.8.0",
+    "nsp": "^2.1.0",
+    "tap": "^8.0.0"
+  },
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.x.x"
+  }
+}
